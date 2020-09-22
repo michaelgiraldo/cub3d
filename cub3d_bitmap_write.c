@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 23:47:30 by mg                #+#    #+#             */
-/*   Updated: 2020/09/16 00:08:27 by mg               ###   ########.fr       */
+/*   Updated: 2020/09/20 15:49:10 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	c3d_write_bmp_header(int fd, t_param *cub3d)
 	return (!(write(fd, bmpfileheader, 54) < 0));
 }
 
-int c3d_write_bmp_data(int fd, t_param *cub3d)
+int	c3d_write_bmp_data(int fd, t_param *cub3d)
 {
 	int	y;
 	int	x;

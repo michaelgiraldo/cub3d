@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_set_color.c                                  :+:      :+:    :+:   */
+/*   cub3d_set_wall_texture.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/05 13:50:11 by mg                #+#    #+#             */
-/*   Updated: 2020/09/20 15:44:36 by mg               ###   ########.fr       */
+/*   Created: 2020/09/21 16:56:05 by mg                #+#    #+#             */
+/*   Updated: 2020/09/21 19:55:48 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** https://harm-smits.github.io/42docs/libs/minilibx/colors.html
-*/
+#include "cub3d.h"
 
-int	c3d_create_trgb(int t, int r, int g, int b)
+void c3d_set_wall_texture(t_param *cub3d)
 {
-	return (t << 24 | r << 16 | g << 8 | b);
-}
-
-int	c3d_get(int trgb)
-{
-	return (trgb & (0xFF << 24));
-}
-
-int	get_r(int trgb)
-{
-	return (trgb & (0xFF << 16));
-}
-
-int	get_g(int trgb)
-{
-	return (trgb & (0xFF << 8));
-}
-
-int	get_b(int trgb)
-{
-	return (trgb & 0xFF);
+	if (cub3d->wall.facing == 'E')
+		cub3d->wall.color = 0xFF00FF; // pink
+	else if (cub3d->wall.facing == 'N')
+		cub3d->wall.color = 0x087A88; // green
+	else if (cub3d->wall.facing == 'W')
+		cub3d->wall.color = 0xE0F01B; // yellow
+	else if (cub3d->wall.facing == 'S')
+		cub3d->wall.color = 0x641173;
 }

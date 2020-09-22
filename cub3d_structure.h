@@ -6,14 +6,12 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 23:51:40 by mg                #+#    #+#             */
-/*   Updated: 2020/09/20 13:31:15 by mg               ###   ########.fr       */
+/*   Updated: 2020/09/21 17:16:06 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CUB3D_H
-# define CUB3D_H
-
-#endif
+#ifndef	CUB3D_STRUCTURE_H
+# define CUB3D_STRUCTURE_H
 
 typedef struct		s_image {
 	void			*img_ptr;
@@ -38,8 +36,8 @@ typedef struct		s_map {
 	int				fd;
 	int				colum;
 	int				row;
-	int	 			tile_size;
-	int 			**grid;
+	int				tile_size;
+	int				**grid;
 }					t_map;
 
 typedef struct		s_window {
@@ -47,20 +45,14 @@ typedef struct		s_window {
 	int				height;
 }					t_window;
 
-
 typedef struct		s_background{
 	size_t			is_texture;
 	size_t			color;
 	t_image			texture;
 }					t_background;
 
-typedef struct		s_coordinate {
-	size_t			x;
-	size_t			y;
-}					t_coordinate;
-
 typedef struct		s_player {
-	int 			x;
+	int				x;
 	int				y;
 	double			angle;
 }					t_player;
@@ -75,8 +67,19 @@ typedef struct		s_ray {
 	double			wall_distance;
 	double			angle;
 	int				wall_hit;
-
 }					t_ray;
+
+typedef struct		s_wall {
+	int				type;
+	int				height;
+	int				color;
+	double			x;
+	double			y;
+	double			angle;
+	double			distance;
+	double			distance_plane;
+	char			facing;
+}					t_wall;
 
 typedef struct		s_param {
 	void			*mlx;
@@ -84,12 +87,14 @@ typedef struct		s_param {
 	t_player		player;
 	t_ray			horizontal;
 	t_ray			vertical;
+	t_wall			wall;
 	t_image			background;
 	t_image			minimap;
-	t_image			wall;
 	t_background	ceiling;
 	t_background	floor;
 	t_texture		texture;
 	t_map			map;
 	t_window		window;
 }					t_param;
+
+#endif

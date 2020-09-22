@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 14:36:02 by mg                #+#    #+#             */
-/*   Updated: 2020/09/17 10:32:42 by mg               ###   ########.fr       */
+/*   Updated: 2020/09/21 18:32:36 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 # define KEY_LEFT		65361
 # define KEY_RIGHT		65363
 # define KEY_ESC		65307
+# define HORIZONTAL		1
+# define VERTICAL		0
 
 int		c3d_bitmap_save(t_param *cub3d);
 int		c3d_write_bmp_header(int fd, t_param *cub3d);
@@ -41,15 +43,49 @@ long			c3d_bmp_pad(long width);
 unsigned long	c3d_bmp_size(long width, long height);
 int		c3d_get_image_color(t_param *cub3d, int x, int y);
 
+void	cub3d_initialize_struct(t_param *cub3d);
+
+
+/*
+** 	Set wall varaiblees
+*/
+void 	c3d_set_wall(t_param *cub3d);
+void 	c3d_set_wall_type(t_param *cub3d);
+void 	c3d_set_wall_distance(t_param *cub3d);
+void 	c3d_set_wall_distance_plane(t_param *cub3d);
+void 	c3d_set_wall_height(t_param *cub3d);
+
+/*
+** 	Determine  north, south, west, east facing wall
+*/
+
+void	c3d_set_wall_facing(t_param *cub3d);
+void	c3d_set_wall_facing_quadrant_1(t_param *cub3d);
+void	c3d_set_wall_facing_quadrant_2(t_param *cub3d);
+void	c3d_set_wall_facing_quadrant_3(t_param *cub3d);
+void	c3d_set_wall_facing_quadrant_4(t_param *cub3d);
+
+
+void c3d_set_wall_texture(t_param *cub3d);
+
+
 /*
 ** Raycasting
 */
 
 void	c3d_raycasting(t_param *cub3d);
+
+/*
+** Raycasting - Hortizontal
+*/
+
 void	c3d_raycasting_horizontal_intercept(t_param *cub3d);
 void	c3d_raycasting_horizontal_wall_check(t_param *cub3d);
 void	c3d_raycasting_horizontal_wall_distance(t_param *cub3d);
 
+/*
+** Raycasting - Vertical
+*/
 
 void	c3d_raycasting_vertical_intercept(t_param *cub3d);
 void	c3d_raycasting_vertical_wall_check(t_param *cub3d);

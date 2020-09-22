@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 23:22:50 by mg                #+#    #+#             */
-/*   Updated: 2020/09/19 16:39:32 by mg               ###   ########.fr       */
+/*   Updated: 2020/09/20 15:44:54 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	c3d_draw_minimap(t_param *cub3d)
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
 	int		color;
 	int		position;
 	double	scale_width;
