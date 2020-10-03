@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 13:36:59 by mg                #+#    #+#             */
-/*   Updated: 2020/09/19 16:40:47 by mg               ###   ########.fr       */
+/*   Updated: 2020/09/30 23:24:25 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,3 @@ int		c3d_parse_map_file(t_param *cub3d)
 	close(cub3d->map.fd);
 	return (1);
 }
-
-/*
-** Parse Texture Path used by Map Texture, Floor, and Ceiling Functions
-*/
-
-char	*c3d_parse_map_texture_path(char *line)
-{
-	char *file_extension;
-	char *path;
-
-	path = NULL;
-	file_extension = line + ft_strlen(line) - 4;
-	if (!ft_strncmp(file_extension, ".xpm", 4))
-	{
-		while (!ft_isblank(*(--file_extension)))
-			;
-		path = ++file_extension;
-	}
-	return (path);
-}
-

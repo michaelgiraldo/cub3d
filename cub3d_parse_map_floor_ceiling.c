@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c3d_parse_map_floor_ceiling.c                    :+:      :+:    :+:   */
+/*   cub3d_parse_map_floor_ceiling.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/05 13:29:15 by mg                #+#    #+#             */
-/*   Updated: 2020/09/15 14:28:24 by mg               ###   ########.fr       */
+/*   Updated: 2020/09/30 23:30:06 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	c3d_parse_map_floor_or_ceiling(char *line, t_param *cub3d)
 	if (*line == 'F' && *(line + 1) == ' ')
 	{
 		if (path && (cub3d->floor.is_texture = 1))
-			c3d_create_texture_from_xpm(cub3d, &cub3d->floor.texture, path);
+			c3d_create_texture(cub3d, &cub3d->floor.texture, path);
 		else
 			cub3d->floor.color = c3d_parse_map_rgb(line);
 	}
 	else if (*line == 'C' && *(line + 1) == ' ')
 	{
 		if (path && (cub3d->ceiling.is_texture = 1))
-			c3d_create_texture_from_xpm(cub3d, &cub3d->ceiling.texture, path);
+			c3d_create_texture(cub3d, &cub3d->ceiling.texture, path);
 		else
 			cub3d->ceiling.color = c3d_parse_map_rgb(line);
 	}
@@ -35,10 +35,10 @@ void	c3d_parse_map_floor_or_ceiling(char *line, t_param *cub3d)
 
 int		c3d_parse_map_rgb(char *line)
 {
-	char *color;
-	size_t red;
-	size_t green;
-	size_t blue;
+	char	*color;
+	size_t	red;
+	size_t	green;
+	size_t	blue;
 
 	color = ft_strnew(0);
 	while (!ft_isdigit(*line))

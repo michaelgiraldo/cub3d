@@ -6,11 +6,11 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 23:51:40 by mg                #+#    #+#             */
-/*   Updated: 2020/09/21 17:16:06 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/02 20:07:31 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CUB3D_STRUCTURE_H
+#ifndef CUB3D_STRUCTURE_H
 # define CUB3D_STRUCTURE_H
 
 typedef struct		s_image {
@@ -37,59 +37,100 @@ typedef struct		s_map {
 	int				colum;
 	int				row;
 	int				tile_size;
+	int				width;
+	int				height;
+	int				step;
 	int				**grid;
 }					t_map;
 
 typedef struct		s_window {
 	int				width;
 	int				height;
+	int				render;
+	double			distance_plane;
 }					t_window;
 
-typedef struct		s_background{
-	size_t			is_texture;
-	size_t			color;
+typedef struct		s_background {
+	int				is_texture;
+	uint32_t		color;
 	t_image			texture;
 }					t_background;
 
 typedef struct		s_player {
-	int				x;
-	int				y;
+	double			x;
+	double			y;
 	double			angle;
 }					t_player;
 
-typedef struct		s_ray {
-	double 			x;
+typedef struct		s_raycast {
+	double			x;
 	double			y;
 	double			xintercept;
 	double			yintercept;
 	double			xstep;
 	double			ystep;
-	double			wall_distance;
-	double			angle;
+	double			distance;
 	int				wall_hit;
+}					t_raycast;
+
+typedef struct		s_ray {
+	double			angle;
 }					t_ray;
 
 typedef struct		s_wall {
 	int				type;
 	int				height;
-	int				color;
-	double			x;
-	double			y;
+	uint32_t		color;
 	double			angle;
 	double			distance;
 	double			distance_plane;
 	char			facing;
+	int				*height_at;
 }					t_wall;
+
+/*
+** perpendicular distance
+*/
+
+typedef struct		s_sprite_grid{
+	int				visible;
+	double			x;
+	double			y;
+}					t_sprite_grid;
+
+typedef struct		s_sprite_info{
+	double			x;
+	double			y;
+	double			delta_x;
+	double			delta_y;
+	double			angle;
+	int				height;
+	double			center_x;
+	double			distance;
+	double			perpendicular_distance;
+	uint32_t		color;
+	int				type;
+}					t_sprite_info;
+
+typedef struct		s_sprite {
+	t_sprite_grid	**grid;
+	t_sprite_info	*visible;
+	int				max;
+}					t_sprite;
 
 typedef struct		s_param {
 	void			*mlx;
 	void			*win;
+	t_sprite		sprite;
 	t_player		player;
-	t_ray			horizontal;
-	t_ray			vertical;
+	t_player		next;
+	t_ray			ray;
+	t_raycast		horizontal;
+	t_raycast		vertical;
 	t_wall			wall;
 	t_image			background;
 	t_image			minimap;
+	t_image			render;
 	t_background	ceiling;
 	t_background	floor;
 	t_texture		texture;
