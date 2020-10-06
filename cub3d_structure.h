@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 23:51:40 by mg                #+#    #+#             */
-/*   Updated: 2020/10/02 20:07:31 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/05 00:23:29 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct		s_image {
 	int				bits_per_pixel;
 	int				size_line;
 	int				endian;
+	char			*file;
 }					t_image;
 
 typedef struct		s_texture {
@@ -34,7 +35,7 @@ typedef struct		s_texture {
 typedef struct		s_map {
 	char			*file;
 	int				fd;
-	int				colum;
+	int				column;
 	int				row;
 	int				tile_size;
 	int				width;
@@ -118,6 +119,11 @@ typedef struct		s_sprite {
 	int				max;
 }					t_sprite;
 
+typedef struct		s_malloc {
+	uint8_t			map_row;
+	uint8_t			sprite_row;
+}					t_malloc;
+
 typedef struct		s_param {
 	void			*mlx;
 	void			*win;
@@ -136,6 +142,8 @@ typedef struct		s_param {
 	t_texture		texture;
 	t_map			map;
 	t_window		window;
+	t_malloc		free;
+	uint8_t			bitmap;
 }					t_param;
 
 #endif
