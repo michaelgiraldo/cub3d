@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 12:35:54 by mg                #+#    #+#             */
-/*   Updated: 2020/10/02 19:29:35 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/05 15:48:45 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	c3d_print_struct(t_param *cub3d)
 {
 	ft_printf("Map file: %s\n", cub3d->map.file);
 	ft_printf("File Descriptor: %d\n", cub3d->map.fd);
-	ft_printf("Map column count: %d\n", cub3d->map.colum);
+	ft_printf("Map columnn count: %d\n", cub3d->map.column);
 	ft_printf("Map row count: %d\n", cub3d->map.row);
 	ft_printf("Window width: %d\n", cub3d->window.width);
 	ft_printf("Window height: %d\n", cub3d->window.height);
@@ -30,6 +30,36 @@ void	c3d_print_struct(t_param *cub3d)
 	c3d_print_map_grid(cub3d);
 }
 
+void 	c3d_print_texture_trgb(t_image *img)
+{
+	int x;
+	int y;
+	uint32_t c;
+
+	y = -1;
+	while (++y < img->height)
+	{
+		x = -1;
+		while (++x < img->width){
+		c = c3d_pixel_get_color(img, x, y);
+		if (x > 0 && !(x % 4))
+			printf("\n");	
+		ft_printf("(%2d, %2d) (%3d, %3d, %3d, %3d) [%X] | ",
+		x, y,
+		c3d_get_t(c), 
+		c3d_get_r(c),
+		c3d_get_g(c),
+		c3d_get_b(c), 
+		c);
+
+		}
+		ft_printf("\n*********************************************************\
+		*******************************************************************\
+		*******************************************************************\n");
+	}
+}
+
+
 void	c3d_print_map_grid(t_param *cub3d)
 {
 	int i;
@@ -40,7 +70,7 @@ void	c3d_print_map_grid(t_param *cub3d)
 	while (i < cub3d->map.row)
 	{
 		j = 0;
-		while (j < cub3d->map.colum)
+		while (j < cub3d->map.column)
 			ft_putnbr(cub3d->map.grid[i][j++]);
 		ft_putchar('\n');
 		i++;
@@ -48,7 +78,7 @@ void	c3d_print_map_grid(t_param *cub3d)
 	ft_printf("Map Grid: END\n");
 }
 
-void	c3d_sprite_grid_print(t_param *cub3d)
+void	c3d_print_sprite_grid(t_param *cub3d)
 {
 	int i;
 	int j;
@@ -57,7 +87,7 @@ void	c3d_sprite_grid_print(t_param *cub3d)
 	while (i < cub3d->map.row)
 	{
 		j = 0;
-		while (j < cub3d->map.colum)
+		while (j < cub3d->map.column)
 		{
 			ft_printf("|%.2lf, %.2lf| ",
 				cub3d->sprite.grid[i][j].x,

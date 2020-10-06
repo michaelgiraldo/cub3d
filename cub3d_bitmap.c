@@ -6,24 +6,31 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 15:58:47 by mg                #+#    #+#             */
-/*   Updated: 2020/10/01 22:28:38 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/04 17:01:54 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		c3d_bitmap_save(t_param *cub3d)
+void		c3d_bitmap_save(t_param *cub3d)
 {
 	int	fd;
+	int error;
 
 	if ((fd = open("cub3d.bmp", O_WRONLY | O_CREAT | O_TRUNC | O_APPEND)) < 0)
-		return (0);
+		error = 1;
 	if (!c3d_bitmap_write_header(fd, cub3d))
-		return (0);
+		error = 2;
 	if (!c3d_bitmap_write_data(fd, cub3d))
-		return (0);
+		error = 3;
 	close(fd);
-	return (1);
+	if (error == 1)
+		c3d_print_error(cub3d, "ISSUE SAVING BITMAP - OPENING FILE");
+	else if (error == 2)
+		c3d_print_error(cub3d, "ISSUE SAVING BITMAP - WRITING HEADER");
+	else if (error == 3)
+		c3d_print_error(cub3d, "ISSUE SAVING BITMAP - WRITING DATA");
+	cub3d->bitmap = 0;
 }
 
 /*

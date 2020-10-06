@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 16:37:12 by mg                #+#    #+#             */
-/*   Updated: 2020/10/02 00:15:43 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/03 18:30:33 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	c3d_wall_distance(t_param *cub3d)
 		* cos(cub3d->player.angle - cub3d->ray.angle);
 	}
 	else
-		c3d_print_error("Wall: No Wall Hit\n");
+		c3d_print_error(cub3d, "Wall: No Wall Hit");
 }
 
 void	c3d_wall_height(t_param *cub3d)

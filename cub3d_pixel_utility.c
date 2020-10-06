@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 12:34:10 by mg                #+#    #+#             */
-/*   Updated: 2020/10/02 19:08:12 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/04 00:01:08 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int			c3d_pixel_postion(int x, int y, int bits_per_pixel, int size_line)
 	return (y * size_line + x * (bits_per_pixel / 8));
 }
 
-int		c3d_pixel_get_image_color(t_param *cub3d, int x, int y)
+int			c3d_pixel_get_image_color(t_param *cub3d, int x, int y)
 {
 	int	rgb;
 	int	color;

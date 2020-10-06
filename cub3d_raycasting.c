@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 12:31:30 by mg                #+#    #+#             */
-/*   Updated: 2020/10/02 19:11:48 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/04 16:55:14 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	c3d_raycasting(t_param *cub3d)
 	if (cub3d->sprite.max > 0)
 		c3d_draw_sprite(cub3d);
 	c3d_window_render(cub3d);
+	if (cub3d->bitmap)
+		c3d_bitmap_save(cub3d);
 }
 
 void	c3d_raycasting_normalize_ray_angle(t_param *cub3d)

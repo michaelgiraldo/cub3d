@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 13:31:19 by mg                #+#    #+#             */
-/*   Updated: 2020/10/02 19:10:10 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/05 12:51:46 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		c3d_draw_sprite_valid(t_param *cub3d, int k, int x, int y)
 
 void	c3d_draw_sprite_pixel(t_param *cub3d, int k, int x, int y)
 {
-	if (c3d_get_t(cub3d->sprite.visible[k].color))
+	if (!(c3d_get_t(cub3d->sprite.visible[k].color) == 0xFF))
 		c3d_pixel_set_color(&cub3d->render, x, y,
 												cub3d->sprite.visible[k].color);
 }
