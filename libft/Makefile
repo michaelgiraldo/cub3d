@@ -3,33 +3,38 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mgiraldo <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: mg <mg@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/26 14:40:16 by mgiraldo          #+#    #+#              #
-#    Updated: 2020/03/05 16:31:02 by mgiraldo         ###   ########.fr        #
+#    Updated: 2020/10/05 18:26:48 by mg               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Name of the library
 NAME=libft.a
 
-SRCS=ft*.c
+#Source
+SRC=ft*.c
 
-OBJECTS=ft*.o
+#Object
+OBJ=ft*.o
 
-INCLUDES=./
+#Include
+INC=-I ./
+
+FLAGS=-Wall -Wextra -Werror
 
 all:$(NAME)
 
-$(NAME):$(SRCS)	libft.h
-	@gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
-	@ar rc $(NAME) $(OBJECTS)
+$(NAME):
+	@gcc ${FLAGS} $(INC) -c $(SRC)
+	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 
 bonus: re
 
 clean:
-	@/bin/rm -f $(OBJECTS)
+	@/bin/rm -f $(OBJ)
 
 fclean: clean
 	@/bin/rm -f $(NAME)
