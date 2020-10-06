@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 13:26:38 by mg                #+#    #+#             */
-/*   Updated: 2020/10/04 21:55:30 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 00:19:05 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,6 @@ void	c3d_draw_wall_strip_internal(t_param *cub3d, int x)
 
 void	c3d_draw_wall_pixel(t_param *cub3d, int x, int y)
 {
-
-//	c3d_pixel_set_color(
-//
-//)
 	int position;
 
 	position = c3d_pixel_postion(x, y,

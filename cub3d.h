@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 19:55:21 by mg                #+#    #+#             */
-/*   Updated: 2020/10/05 17:30:49 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 01:41:45 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@
 
 # include "cub3d_structure.h"
 # include "cub3d_define.h"
-
+# include "cub3d_mlx_event.h"
 
 /*
-** 	ARGV validation 
+** 	ARGV validation
 */
 
 int			c3d_is_save(char *arg);
@@ -54,10 +54,10 @@ void		c3d_bitmap_write_int_in_char(unsigned char *start, int value);
 */
 
 uint32_t	c3d_create_trgb(int t, int r, int g, int b);
-int	c3d_get_t(uint32_t trgb);
-int	c3d_get_r(uint32_t trgb);
-int	c3d_get_g(uint32_t trgb);
-int	c3d_get_b(uint32_t trgb);
+int			c3d_get_t(uint32_t trgb);
+int			c3d_get_r(uint32_t trgb);
+int			c3d_get_g(uint32_t trgb);
+int			c3d_get_b(uint32_t trgb);
 
 /*
 ** 	Pixel
@@ -88,6 +88,7 @@ char		*c3d_texture_is_xpm_extension(char *path);
 */
 
 int			c3d_key_press(int keycode, t_param *cub3d);
+int			c3d_x_window_exit(t_param *cub3d);
 
 /*
 ** 	Player Movement

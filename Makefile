@@ -1,50 +1,76 @@
-NAME	= Cub3D
-CC		= gcc
-Make	= make
-OS		= $(shell uname)
-CFLAGS	= -Wall -Wextra -Werror
-MLX_DIR	= minilibx-linux
-MLX_LNK	= -L ${MLX_DIR} -lmlx -lXext -lX11 -lbsd
-LIBS	= -L ft_printf ${MLX_LNK} -lm
-INC		= -I $(MLX_DIR) -I libft -I getline -I ft_printf
-OBJS	= ${SRCS:.c=.o}
-SRCS	= cub3d.c libft/ft*.c getline/get*.c ft_printf/ft*.c ft_printf/pf*.c
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mg <mg@student.42.fr>                      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/02/26 14:40:16 by mgiraldo          #+#    #+#              #
+#    Updated: 2020/10/06 00:09:56 by mg               ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-.c.o:
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} ${INC}
+# 	gcc cub*.c
+#	-L ft_printf -lftprintf
+#	-L gnl -lgnl 
+#	-L libft -lft 
+#	-L minilibx-linux -lmlx
+#	-lXext -lX11 -lbsd -lm
 
-all: ${NAME}
+# GAME
+GAME=Cub3D
 
-${NAME}: ${OBJS} build
-		@echo "\033[35m-= Making Cub3D... =-"
-		${CC} ${CFLAGS} ${INC} ${OBJS} ${LIBS} -o ${NAME}
-		@echo "\033[32m   ______      __   _____ ____  "
-		@echo "\033[32m  / ____/_  __/ /_ |__  // __ \ "
-		@echo "\033[32m / /   / / / / __ \ /_ </ / / / "
-		@echo "\033[32m/ /___/ /_/ / /_/ /__/ / /_/ /  "
-		@echo "\033[32m\____/\__,_/_.___/____/_____/   usage: ./Cub3D <map.cub> [--save]"
+#Source
+SRC=cub3d*.c
 
-build:
-	@echo "\033[34m-= Making mlx, libft, and ft_printf... =-"
-	@make -C $(MLX_DIR)
-	@make -C ft_printf
-	@echo "\033[34m-= mlx, libft, and ft_printf. Done ! =-"
+#Object
+OBJ=${SRC:.c=.o}
 
-bonus:
-	re
+#Include
+INC=-I ./ -I ./libft -I ./ft_printf -I ./gnl
 
+FLAGS=-Wall -Wextra -Werror -g
+
+#ft_printf libary link
+PRINTF=-L ft_printf -lftprintf
+
+#getnextline libary link
+GNL=-L gnl -lgnl
+
+#libft libary link
+LIBFT=-L libft -lft
+
+#mlx libary link
+MLX=-I minilibx -L minilibx-linux -lmlx 
+
+#Additional System libaries
+SYS=-lXext -lX11 -lbsd -lm
+
+all:$(GAME)
+
+$(GAME):
+	@make -C ./libft
+	@make -C ./ft_printf
+	@make -C ./gnl
+	@make -C ./minilibx-linux
+	gcc ${FLAGS} ${SRC} ${PRINTF} ${GNL} ${LIBFT} ${MLX} ${SYS} -o ${GAME}
+
+#mlx does not have a clean equivalent
+#mlx clean behaves similar to fclean 
 clean:
-	rm -f ${OBJS}
-
+	@/bin/rm -f $(OBJ)
+	@make clean -C ./libft
+	@make clean -C ./ft_printf
+	@make clean -C ./gnl
+	
+#mlx clean behaves similar to fclean 
 fclean: clean
-	@echo "\033[33m-= Cleaning Libft... =-"
-	@make fclean -C libft
-	@echo "\033[34m-= Cleaning mlx... =-"
-	@make clean -C $(MLX_DIR)
-	@echo "\033[35m-= Cleaning Cub3D... =-"
-	rm -f ${NAME}
-	@echo "Done.\033[0;0m"
+	@/bin/rm -f $(GAME)
+	@make fclean -C ./libft
+	@make fclean -C ./ft_printf
+	@make fclean -C ./gnl
+	@make clean -C ./minilibx-linux
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus mlx ft
+bonus: re

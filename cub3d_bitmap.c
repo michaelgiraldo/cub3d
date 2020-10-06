@@ -6,13 +6,13 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 15:58:47 by mg                #+#    #+#             */
-/*   Updated: 2020/10/04 17:01:54 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 00:19:05 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void		c3d_bitmap_save(t_param *cub3d)
+void	c3d_bitmap_save(t_param *cub3d)
 {
 	int	fd;
 	int error;

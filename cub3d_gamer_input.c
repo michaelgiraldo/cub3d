@@ -6,11 +6,17 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 16:47:07 by mg                #+#    #+#             */
-/*   Updated: 2020/10/04 16:48:18 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 00:22:38 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+int	c3d_x_window_exit(t_param *cub3d)
+{
+	c3d_print_error(cub3d, "THANK YOU FOR PLAYING MY GAME");
+	return (1);
+}
 
 /*
 ** 	KEY_W = NORTH = FORWARD MOVEMENT
@@ -21,7 +27,7 @@
 ** 	KEY_RIGHT = CLOCKWISE ROTATION
 */
 
-int		c3d_key_press(int keycode, t_param *cub3d)
+int	c3d_key_press(int keycode, t_param *cub3d)
 {
 	cub3d->window.render = 0;
 	if (keycode == KEY_W)

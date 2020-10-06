@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 20:15:13 by mg                #+#    #+#             */
-/*   Updated: 2020/10/05 11:02:15 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 00:19:59 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 #include "cub3d.h"
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_param cub3d;
 
@@ -32,14 +32,15 @@ int		main(int argc, char **argv)
 	c3d_initiate_game(&cub3d);
 	c3d_raycasting(&cub3d);
 	mlx_key_hook(cub3d.win, c3d_key_press, &cub3d);
+	mlx_hook(cub3d.win, DESTROYNOTIFY, 1L << 17, c3d_x_window_exit, &cub3d);
 	mlx_loop(cub3d.mlx);
 	return (1);
 }
 
 int	c3d_is_save(char *arg)
 {
-	if(ft_strlen(arg) == 6 && !ft_strcmp(arg, "--save"))
-		return(1);
+	if (ft_strlen(arg) == 6 && !ft_strcmp(arg, "--save"))
+		return (1);
 	return (0);
 }
 
