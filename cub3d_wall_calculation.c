@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 16:37:12 by mg                #+#    #+#             */
-/*   Updated: 2020/10/03 18:30:33 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 12:51:10 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,4 @@ void	c3d_wall_height(t_param *cub3d)
 	else
 		cub3d->wall.height =
 	cub3d->map.tile_size / cub3d->map.step * cub3d->window.distance_plane;
-}
-
-int		c3d_wall_collusion(t_param *cub3d, int x, int y)
-{
-	if (cub3d->map.grid
-	[(int)(y / cub3d->map.tile_size)]
-	[(int)(x / cub3d->map.tile_size)] == 1)
-		return (1);
-	return (0);
 }

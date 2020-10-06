@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 04:20:13 by mg                #+#    #+#             */
-/*   Updated: 2020/10/01 22:14:41 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 12:34:52 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	c3d_sprite_visible_angle(t_param *cub3d, int k)
 	s = atan2(dy, dx);
 	if (s < 0)
 		s += M_PI * 2;
+	if (s >= 3 * M_PI_2 && p < M_PI_2)
+		s -= M_PI * 2;
 	if (p >= 3 * M_PI_2 && s < M_PI_2)
 		s += M_PI * 2;
 	cub3d->sprite.visible[k].angle = s;

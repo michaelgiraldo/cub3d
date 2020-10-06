@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 19:55:21 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 01:41:45 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 13:04:57 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,17 +91,11 @@ int			c3d_key_press(int keycode, t_param *cub3d);
 int			c3d_x_window_exit(t_param *cub3d);
 
 /*
-** 	Player Movement
+** 	Window Information
 */
 
-void		c3d_player_rotation(t_param *cub3d, int direction);
-void		c3d_player_normalize_angle(t_param *cub3d);
-void		c3d_player_normalize_next_angle(t_param *cub3d);
-void		c3d_player_next_postion(t_param *cub3d, int direction);
-void		c3d_player_next_postion_wall_check(t_param *cub3d);
-int			c3d_wall_collusion(t_param *cub3d, int x, int y);
-
 void		c3d_window_distance_plane(t_param *cub3d);
+void		c3d_window_render(t_param *cub3d);
 
 /*
 ** 	Set wall varaibles
@@ -136,7 +130,6 @@ void		c3d_wall_texture_color(t_param *cub3d, t_image *img, int x, int y);
 void		c3d_raycasting(t_param *cub3d);
 void		c3d_raycasting_normalize_ray_angle(t_param *cub3d);
 void		c3d_raycasting_ray_angle_at_x(t_param *cub3d, int x);
-void		c3d_window_render(t_param *cub3d);
 
 /*
 ** Raycasting - Hortizontal
@@ -253,6 +246,19 @@ void		c3d_player_coordinate(t_param *cub3d, double angle, int x, int y);
 void		c3d_player_validation(t_param *cub3d, int i);
 
 /*
+** 	Player Movement
+*/
+
+void		c3d_player_rotation(t_param *cub3d, int direction);
+void		c3d_player_normalize_angle(t_param *cub3d);
+void		c3d_player_normalize_next_angle(t_param *cub3d);
+void		c3d_player_next_postion(t_param *cub3d, int direction);
+void		c3d_player_next_postion_wall_check(t_param *cub3d);
+void		c3d_player_postion_sprite_check(t_param *cub3d);
+int			c3d_player_wall_collusion(t_param *cub3d, int x, int y);
+int			c3d_player_sprite_collusion(t_param *cub3d, int x, int y);
+
+/*
 ** Map File Grid Allocation & Memory Management
 */
 
@@ -268,7 +274,7 @@ int			c3d_map_file_is_texture(char *line);
 int			c3d_map_file_is_floor_or_ceiling(char *line);
 
 /*
-** Intialize player start postion and angle
+** Valid map check
 */
 
 void		c3d_map_validation(t_param *cub3d);

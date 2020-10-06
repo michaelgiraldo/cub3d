@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 00:05:36 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 00:19:04 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 12:26:10 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,17 @@ void	c3d_print_sprite_strip(t_param *cub3d, int k)
 	double	start_angle;
 	double	delta_angle;
 
-	ft_printf("SPRITE| ******* %d *******|\n", cub3d->sprite.visible[k].angle);
-	ft_printf("SPRITE|04 - ANGLE |%lf|\n", cub3d->sprite.visible[k].angle);
-	ft_printf("SPRITE|player x |%lf|\n", cub3d->player.x);
-	ft_printf("SPRITE|player y |%lf|\n", cub3d->player.y);
-	ft_printf("SPRITE|pl.angle |%lf|\n", cub3d->player.angle);
-	ft_printf("SPRITE|sprite x |%lf|\n", cub3d->sprite.visible[k].x);
-	ft_printf("SPRITE|sprite y |%lf|\n", cub3d->sprite.visible[k].y);
-	ft_printf("SPRITE|delta x  |%lf|\n", cub3d->sprite.visible[k].delta_x);
-	ft_printf("SPRITE|delta y  |%lf|\n", cub3d->sprite.visible[k].delta_y);
-	ft_printf("SPRITE|distance |%lf|\n", cub3d->sprite.visible[k].distance);
-	ft_printf("SPRITE|prep distance  |%lf|\n",
+	ft_printf("SPRITE| ******* %d *******|\n", k);
+	ft_printf("PLAYER|   x   |%lf|\n", cub3d->player.x);
+	ft_printf("PLAYER|   y   |%lf|\n", cub3d->player.y);
+	ft_printf("PLAYER| ANGLE |%lf|\n", cub3d->player.angle);
+	ft_printf("SPRITE| ANGLE |%lf|\n", cub3d->sprite.visible[k].angle);
+	ft_printf("SPRITE|   x   |%lf|\n", cub3d->sprite.visible[k].x);
+	ft_printf("SPRITE|   y   |%lf|\n", cub3d->sprite.visible[k].y);
+	ft_printf("SPRITE| delta x  |%lf|\n", cub3d->sprite.visible[k].delta_x);
+	ft_printf("SPRITE| delta y  |%lf|\n", cub3d->sprite.visible[k].delta_y);
+	ft_printf("SPRITE| distance |%lf|\n", cub3d->sprite.visible[k].distance);
+	ft_printf("SPRITE| perp.dist|%lf|\n",
 	cub3d->sprite.visible[k].perpendicular_distance);
 	ft_printf("SPRITE|height  |%lf|\n", cub3d->sprite.visible[k].height);
 	angle_increment = (M_PI / 3) / cub3d->window.width;
