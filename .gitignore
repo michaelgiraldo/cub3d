@@ -1,7 +1,6 @@
 # User defined files
-.vscode
-./ft_printf/Makefile
-./libft/Makefile
+sandbox
+Cub3D
 
 # Prerequisites
 *.d
