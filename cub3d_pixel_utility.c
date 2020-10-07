@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 12:34:10 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 16:10:38 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 13:32:48 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,27 @@ void		c3d_pixel_set_color(t_image *img, int x, int y, uint32_t color)
 	uint32_t	*dst;
 
 	dst = (uint32_t *)(img->img_data +
-		(y * img->size_line + x * (img->bits_per_pixel / 8)));
+					(y * img->size_line + x * (img->bits_per_pixel / 8)));
+	*dst = color;
+}
+
+uint32_t	c3d_pixel_get_color_pos(t_image *img, int pos)
+{
+	uint32_t	*dst;
+
+	dst = (uint32_t *)(img->img_data + pos);
+	return (*dst);
+}
+
+void		c3d_pixel_set_color_pos(t_image *img, int pos, uint32_t color)
+{
+	uint32_t	*dst;
+
+	dst = (uint32_t *)(img->img_data + pos);
 	*dst = color;
 }
 
 int			c3d_pixel_position(int x, int y, int bits_per_pixel, int size_line)
 {
 	return (y * size_line + x * (bits_per_pixel / 8));
-}
-
-int			c3d_pixel_get_image_color(t_param *cub3d, int x, int y)
-{
-	int	rgb;
-	int	color;
-
-	color = *(int*)(cub3d->render.img_data
-		+ (4 * (int)cub3d->window.width * ((int)cub3d->window.height - 1 - y))
-		+ (4 * x));
-	rgb = (color & 0xFF0000) | (color & 0x00FF00) | (color & 0x0000FF);
-	return (rgb);
 }

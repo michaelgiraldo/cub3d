@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 23:51:40 by mg                #+#    #+#             */
-/*   Updated: 2020/10/05 00:23:29 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 11:40:22 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 typedef struct		s_image {
 	void			*img_ptr;
 	char			*img_data;
+	int				img_size;
 	int				width;
 	int				height;
 	int				bits_per_pixel;

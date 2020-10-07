@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 21:40:25 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 16:14:05 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 15:03:28 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ void	c3d_player_normalize_next_angle(t_param *cub3d)
 
 void	c3d_player_next_position_wall_check(t_param *cub3d)
 {
-	if (cub3d->next.x >= 0 && cub3d->next.x < cub3d->map.width &&
-		cub3d->next.y >= 0 && cub3d->next.y < cub3d->map.height &&
+	if (cub3d->next.x > 0 && cub3d->next.x < cub3d->map.width &&
+		cub3d->next.y > 0 && cub3d->next.y < cub3d->map.height &&
 		!c3d_player_wall_collusion(cub3d, cub3d->next.x, cub3d->next.y))
 	{
 		if (!c3d_player_wall_collusion(cub3d,
-			cub3d->next.x + cub3d->map.step * cos(cub3d->next.angle),
-			cub3d->next.y + cub3d->map.step * sin(cub3d->next.angle)))
+			cub3d->next.x + (cub3d->map.step - 2) * cos(cub3d->next.angle),
+			cub3d->next.y - (cub3d->map.step - 2) * sin(cub3d->next.angle)))
 		{
 			cub3d->player.x = cub3d->next.x;
 			cub3d->player.y = cub3d->next.y;

@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 20:15:13 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 22:08:25 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 15:02:23 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 ** gcc -Wextra -Werror -Wall
 ** cub3d*.c libft/ft*.c getline/get*.c ft_printf/ft*.c ft_printf/pf*.c
 ** -L minilibx-linux -lmlx -lXext -lX11 -lbsd -lm -g
+**
+** mlx_key_hook(cub3d.win, c3d_key_press, &cub3d);
 */
 
 #include "cub3d.h"
@@ -32,8 +34,7 @@ int	main(int argc, char **argv)
 	c3d_initiate_game(&cub3d);
 	c3d_raycasting(&cub3d);
 	c3d_valid_keys();
-//	mlx_key_hook(cub3d.win, c3d_key_press, &cub3d);
-	mlx_hook(cub3d.win, KEYPRESS, 1L<<0, c3d_key_press, &cub3d);
+	mlx_hook(cub3d.win, KEYPRESS, 1L << 0, c3d_key_press, &cub3d);
 	mlx_hook(cub3d.win, DESTROYNOTIFY, 1L << 17, c3d_game_exit, &cub3d);
 	mlx_hook(cub3d.win, RESIZEREQUEST, 1L << 18, c3d_window_refresh, &cub3d);
 	mlx_loop(cub3d.mlx);

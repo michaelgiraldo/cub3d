@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 15:58:47 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 20:17:39 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 14:29:09 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ void	c3d_bitmap_save(t_param *cub3d)
 	int	fd;
 	int error;
 
+	error = 0;
 	if ((fd = open("cub3d.bmp", O_WRONLY | O_CREAT | O_TRUNC | O_APPEND)) < 0)
 		error = 1;
-	if (!c3d_bitmap_write_header(fd, cub3d))
+	if (!error && !c3d_bitmap_write_header(fd, &cub3d->render))
 		error = 2;
-	if (!c3d_bitmap_write_data(fd, cub3d))
+	if (!error && !c3d_bitmap_write_data(fd, &cub3d->render))
 		error = 3;
 	close(fd);
 	if (error == 1)

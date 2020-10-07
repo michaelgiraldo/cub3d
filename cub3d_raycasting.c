@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 12:31:30 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 20:16:36 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 14:59:48 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	c3d_raycasting(t_param *cub3d)
 	int x;
 
 	x = cub3d->window.width;
-	c3d_draw_background(cub3d);
+	c3d_memcpy_image(&cub3d->render, &cub3d->background);
 	while (x--)
 	{
 		c3d_raycasting_ray_angle_at_x(cub3d, x);

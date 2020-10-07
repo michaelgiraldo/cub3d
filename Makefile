@@ -6,7 +6,7 @@
 #    By: mg <mg@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/26 14:40:16 by mgiraldo          #+#    #+#              #
-#    Updated: 2020/10/06 20:52:30 by mg               ###   ########.fr        #
+#    Updated: 2020/10/07 15:05:35 by mg               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ OBJ=${SRC:.c=.o}
 #Include
 INC=-I ./ -I ./libft -I ./ft_printf -I ./gnl
 
+#FLAGS=-Wall -Wextra -Werror
 FLAGS=-Wall -Wextra -Werror -g
 
 #ft_printf libary link

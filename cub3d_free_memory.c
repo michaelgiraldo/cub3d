@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 12:38:48 by mg                #+#    #+#             */
-/*   Updated: 2020/10/05 15:19:36 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 15:12:27 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,14 @@ void	c3d_free_memory_mlx_img(t_param *cub3d)
 		mlx_destroy_image(cub3d->mlx, cub3d->texture.east.img_ptr);
 	if (cub3d->texture.sprite.img_ptr)
 		mlx_destroy_image(cub3d->mlx, cub3d->texture.sprite.img_ptr);
-	if (cub3d->render.img_ptr)
-		mlx_destroy_image(cub3d->mlx, cub3d->render.img_ptr);
 	if (cub3d->floor.texture.img_ptr)
 		mlx_destroy_image(cub3d->mlx, cub3d->floor.texture.img_ptr);
 	if (cub3d->ceiling.texture.img_ptr)
 		mlx_destroy_image(cub3d->mlx, cub3d->ceiling.texture.img_ptr);
+	if (cub3d->render.img_ptr)
+		mlx_destroy_image(cub3d->mlx, cub3d->render.img_ptr);
+	if (cub3d->background.img_ptr)
+		mlx_destroy_image(cub3d->mlx, cub3d->background.img_ptr);
 }
 
 void	c3d_free_memory_str(t_param *cub3d)

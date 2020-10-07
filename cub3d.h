@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 19:55:21 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 21:30:53 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 13:44:36 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int			c3d_is_cub_extension(char *line);
 void		c3d_bitmap_save(t_param *cub3d);
 long		c3d_bitmap_pad(long width);
 size_t		c3d_bitmap_size(long width, long height);
-int			c3d_bitmap_write_header(int fd, t_param *cub3d);
-int			c3d_bitmap_write_data(int fd, t_param *cub3d);
+int			c3d_bitmap_write_header(int fd, t_image *img);
+int			c3d_bitmap_write_data(int fd, t_image *img);
 void		c3d_bitmap_write_int_in_char(unsigned char *start, int value);
 
 /*
@@ -65,16 +65,19 @@ int			c3d_get_b(uint32_t trgb);
 
 uint32_t	c3d_pixel_get_color(t_image *img, int x, int y);
 void		c3d_pixel_set_color(t_image *img, int x, int y, uint32_t color);
+uint32_t	c3d_pixel_get_color_pos(t_image *img, int pos);
+void		c3d_pixel_set_color_pos(t_image *img, int pos, uint32_t color);
 uint32_t	c3d_sprite_texture_pixel_color(t_image *img, int x, int y, int h);
 int			c3d_pixel_get_image_color(t_param *cub3d, int x, int y);
 int			c3d_pixel_position(int x, int y, int bits_per_pixel, int size_line);
 
 /*
-** MLX create functons
+** Image Utility
 */
 
-void		c3d_create_image(t_param *cub3d, t_image *img, int w, int h);
-
+void		c3d_create_image(t_param *cub3d, t_image *img);
+void		c3d_memcpy_image(t_image *a, t_image *b);
+void		c3d_memcpy_at_pixel(t_image *a, t_image *b, int x, int y);
 /*
 ** Warper functions for MLX mlx_xpm_file_to_image() and  mlx_get_data_addr()
 */
@@ -153,10 +156,23 @@ void		c3d_raycasting_vertical_wall_check(t_param *cub3d);
 void		c3d_raycasting_vertical_wall_distance(t_param *cub3d);
 
 /*
-** Raycasting - Vertical
+** Draw Rainbow
 */
 
+void		c3d_draw_rainbow(t_param *cub3d);
+
+/*
+** Draw Floor and Ceiling
+*/
+
+void		c3d_initialize_background(t_param *cub3d);
 void		c3d_draw_background(t_param *cub3d);
+void		c3d_draw_background_rgb(t_param *cub3d, t_image *background);
+
+/*
+** Draw Minimap
+*/
+
 void		c3d_draw_minimap(t_param *cub3d);
 
 /*
@@ -221,7 +237,7 @@ void		c3d_initialize_render_image(t_param *cub3d);
 ** 	Background floor and ceiling
 */
 
-void		c3d_background(t_param *cub3d, t_background *bg);
+void		c3d_parse_background(t_param *cub3d, t_background *bg);
 int			c3d_parse_rgb_valid_pattern(char *line);
 int			c3d_parse_rgb(char *line);
 

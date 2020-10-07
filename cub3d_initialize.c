@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 16:33:17 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 15:48:34 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 11:55:03 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ void	c3d_initiate_game(t_param *cub3d)
 
 void	c3d_initialize_background(t_param *cub3d)
 {
-	c3d_background(cub3d, &cub3d->ceiling);
-	c3d_background(cub3d, &cub3d->floor);
+	c3d_parse_background(cub3d, &cub3d->ceiling);
+	c3d_parse_background(cub3d, &cub3d->floor);
+	c3d_draw_background(cub3d);
 }
 
 void	c3d_initialize_texture(t_param *cub3d)
