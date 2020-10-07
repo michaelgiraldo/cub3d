@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 20:15:13 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 21:30:53 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 22:08:25 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int	main(int argc, char **argv)
 	c3d_initiate_game(&cub3d);
 	c3d_raycasting(&cub3d);
 	c3d_valid_keys();
-	mlx_key_hook(cub3d.win, c3d_key_press, &cub3d);
+//	mlx_key_hook(cub3d.win, c3d_key_press, &cub3d);
+	mlx_hook(cub3d.win, KEYPRESS, 1L<<0, c3d_key_press, &cub3d);
 	mlx_hook(cub3d.win, DESTROYNOTIFY, 1L << 17, c3d_game_exit, &cub3d);
 	mlx_hook(cub3d.win, RESIZEREQUEST, 1L << 18, c3d_window_refresh, &cub3d);
 	mlx_loop(cub3d.mlx);

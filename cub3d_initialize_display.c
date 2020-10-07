@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 17:42:38 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 20:26:10 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 22:05:23 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ void	c3d_initialize_display(t_param *cub3d)
 		c3d_initialize_display_window(cub3d);
 	c3d_initialize_render_image(cub3d);
 }
+
+/*
+** https://github.com/sguillia/42-fractol/blob/master/fractol/init_t_mlx.c
+** 
+** Useage example of autorepeat
+*/
 
 void	c3d_initialize_display_mlx(t_param *cub3d)
 {
