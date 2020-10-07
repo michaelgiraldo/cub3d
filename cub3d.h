@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 19:55:21 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 21:15:50 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 21:30:53 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char		*c3d_texture_is_xpm_extension(char *path);
 */
 
 int			c3d_key_press(int keycode, t_param *cub3d);
-int			c3d_x_window_exit(t_param *cub3d);
+int			c3d_game_exit(t_param *cub3d);
 void		c3d_valid_keys(void);
 /*
 ** 	Window Information

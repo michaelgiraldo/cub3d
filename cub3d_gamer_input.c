@@ -6,13 +6,13 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 16:47:07 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 21:20:23 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 21:31:18 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		c3d_x_window_exit(t_param *cub3d)
+int		c3d_game_exit(t_param *cub3d)
 {
 	ft_printf("THANK YOU FOR PLAYING MY GAME\n");
 	c3d_free_memory(cub3d);
@@ -44,7 +44,7 @@ int		c3d_key_press(int keycode, t_param *cub3d)
 	else if (keycode == KEY_RIGHT)
 		c3d_player_rotation(cub3d, CLOCKWISE);
 	else if (keycode == KEY_ESC)
-		c3d_free_memory(cub3d);
+		c3d_game_exit(cub3d);
 	else
 		c3d_valid_keys();
 	if (cub3d->window.render)
