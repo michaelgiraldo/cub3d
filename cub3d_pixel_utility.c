@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 12:34:10 by mg                #+#    #+#             */
-/*   Updated: 2020/10/04 00:01:08 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 16:10:38 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		c3d_pixel_set_color(t_image *img, int x, int y, uint32_t color)
 	*dst = color;
 }
 
-int			c3d_pixel_postion(int x, int y, int bits_per_pixel, int size_line)
+int			c3d_pixel_position(int x, int y, int bits_per_pixel, int size_line)
 {
 	return (y * size_line + x * (bits_per_pixel / 8));
 }

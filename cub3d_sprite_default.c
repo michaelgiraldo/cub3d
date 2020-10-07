@@ -6,16 +6,11 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 18:37:30 by mg                #+#    #+#             */
-/*   Updated: 2020/10/03 12:45:50 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 15:58:58 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	c3d_sprite_visible_default(t_param *cub3d)
-{
-	ft_memset(&cub3d->sprite.visible, 0, 50 * sizeof(t_sprite_info));
-}
 
 void	c3d_sprite_grid_default(t_param *cub3d)
 {

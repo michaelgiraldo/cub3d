@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 16:33:17 by mg                #+#    #+#             */
-/*   Updated: 2020/10/05 15:49:03 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 15:48:34 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	c3d_initialize_texture(t_param *cub3d)
 
 void	c3d_initialize_map(t_param *cub3d)
 {
-	cub3d->map.tile_size = 64;
+	cub3d->map.tile_size = TILE_SIZE;
 	c3d_map_grid_allocation(cub3d);
 	c3d_parse_map_grid(cub3d);
 	c3d_player_starting_positon(cub3d);

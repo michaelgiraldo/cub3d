@@ -6,12 +6,19 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 19:34:01 by mg                #+#    #+#             */
-/*   Updated: 2020/10/02 20:18:33 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 15:52:44 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_DEFINE_H
 # define CUB3D_DEFINE_H
+
+/*
+** Game Values
+*/
+
+# define MAX_SPRITE			128
+# define TILE_SIZE			320
 
 /*
 ** Linux key code

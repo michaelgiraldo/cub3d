@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 12:31:30 by mg                #+#    #+#             */
-/*   Updated: 2020/10/04 16:55:14 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 20:16:36 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void	c3d_raycasting(t_param *cub3d)
 	c3d_sprite_visible(cub3d);
 	if (cub3d->sprite.max > 0)
 		c3d_draw_sprite(cub3d);
-	c3d_window_render(cub3d);
 	if (cub3d->bitmap)
 		c3d_bitmap_save(cub3d);
+	c3d_window_render(cub3d);
 }
 
 void	c3d_raycasting_normalize_ray_angle(t_param *cub3d)
@@ -101,7 +101,8 @@ void	c3d_raycasting_ray_angle_at_x(t_param *cub3d, int x)
 **		((double)(1023.0 / 2.0) / tan(M_PI / 6.0)));
 ** 		test_angle += ((1023 - x) * increment_angle);
 **
-** 		printf("|%04d|ANGLE|%10.10f| >>> TEST ANGLE >>> |%10.10lf|
+** 		// change p_r_i_n_t_f  remove underscores
+** 		p_r_i_n_t_f("|%04d|ANGLE|%10.10f| >>> TEST ANGLE >>> |%10.10lf|
 ** 		MATCH |%d| >>> END ANGLE >>> |%10.10lf| MATCH |%d|
 **		>>> START ANGLE >>> |%10.10lf| MATCH |%d|\n",
 ** 		x,

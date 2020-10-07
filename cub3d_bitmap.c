@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 15:58:47 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 00:19:05 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 20:17:39 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	c3d_bitmap_save(t_param *cub3d)
 		c3d_print_error(cub3d, "ISSUE SAVING BITMAP - WRITING HEADER");
 	else if (error == 3)
 		c3d_print_error(cub3d, "ISSUE SAVING BITMAP - WRITING DATA");
-	cub3d->bitmap = 0;
+	ft_printf("BITMAP SAVED TO cub3d.bmp\n");
+	c3d_free_memory(cub3d);
 }
 
 /*

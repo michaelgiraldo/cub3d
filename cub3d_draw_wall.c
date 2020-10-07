@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 13:26:38 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 00:19:05 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 16:10:38 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	c3d_draw_wall_pixel(t_param *cub3d, int x, int y)
 {
 	int position;
 
-	position = c3d_pixel_postion(x, y,
+	position = c3d_pixel_position(x, y,
 						cub3d->render.bits_per_pixel, cub3d->render.size_line);
 	*(unsigned int*)(cub3d->render.img_data + position) = cub3d->wall.color;
 }

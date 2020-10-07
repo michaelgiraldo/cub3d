@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 00:05:36 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 12:26:10 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 20:12:56 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void	c3d_print_texture_trgb(t_image *img)
 		{
 			c = c3d_pixel_get_color(img, x, y);
 			if (x > 0 && !(x % 4))
-				printf("\n");
+				ft_printf("\n");
 			ft_printf("(%2d, %2d) (%3d, %3d, %3d, %3d) [%X] | ",
 			x, y,
 			c3d_get_t(c),

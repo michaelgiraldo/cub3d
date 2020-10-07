@@ -15,7 +15,7 @@ DOCP=do_cp
 
 
 
-CC	= gcc
+CC	= gcc -g
 
 NAME	= libmlx.a
 

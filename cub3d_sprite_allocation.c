@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 03:13:18 by mg                #+#    #+#             */
-/*   Updated: 2020/10/04 15:35:44 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 13:37:53 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ void	c3d_sprite_malloc_map_grid(t_param *cub3d)
 
 void	c3d_sprite_malloc_visible_arrary(t_param *cub3d)
 {
-	cub3d->sprite.visible = malloc(50 * sizeof(t_sprite_info));
+	uint size;
+
+	size = MAX_SPRITE * sizeof(t_sprite_info);
+	cub3d->sprite.visible = malloc(size);
 	if (!(cub3d->sprite.visible))
 		c3d_print_error(cub3d, "SPRITE GRID");
 }

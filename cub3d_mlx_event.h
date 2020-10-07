@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 22:53:45 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 13:02:21 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 18:44:23 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 ** https://tronche.com/gui/x/xlib/events/mask.html
 ** https://tronche.com/gui/x/xlib/events/types.html
 ** https://github.com/Adgeff/mlx_keycode/blob/master/mlx_keycode.h
+** https://refspecs.linuxfoundation.org/LSB_1.3.0/gLSB/gLSB/libx11-ddefs.html
 */
 
 #ifndef CUB3D_MLX_EVENT_H
@@ -76,5 +77,6 @@
 # define CONFIGURENOTIFY			22
 # define CONFIGUREREQUEST			23
 # define GRAVITYNOTIFY				24
+# define RESIZEREQUEST				25
 
 #endif

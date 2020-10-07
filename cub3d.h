@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 19:55:21 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 13:04:57 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 18:43:35 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ uint32_t	c3d_pixel_get_color(t_image *img, int x, int y);
 void		c3d_pixel_set_color(t_image *img, int x, int y, uint32_t color);
 uint32_t	c3d_sprite_texture_pixel_color(t_image *img, int x, int y, int h);
 int			c3d_pixel_get_image_color(t_param *cub3d, int x, int y);
-int			c3d_pixel_postion(int x, int y, int bits_per_pixel, int size_line);
+int			c3d_pixel_position(int x, int y, int bits_per_pixel, int size_line);
 
 /*
 ** MLX create functons
@@ -96,6 +96,7 @@ int			c3d_x_window_exit(t_param *cub3d);
 
 void		c3d_window_distance_plane(t_param *cub3d);
 void		c3d_window_render(t_param *cub3d);
+int			c3d_window_refresh(t_param *cub3d);
 
 /*
 ** 	Set wall varaibles
@@ -214,6 +215,7 @@ void		c3d_initialize_map(t_param *cub3d);
 void		c3d_initialize_sprite(t_param *cub3d);
 void		c3d_initialize_background(t_param *cub3d);
 void		c3d_initialize_texture(t_param *cub3d);
+void		c3d_initialize_render_image(t_param *cub3d);
 
 /*
 ** 	Background floor and ceiling
@@ -238,7 +240,7 @@ void		c3d_parse_map_file_texture(char *line, t_param *cub3d);
 void		c3d_parse_map_grid_copy(int i, char *line, t_param *cub3d);
 
 /*
-** Intialize player start postion and angle
+** Intialize player start position and angle
 */
 
 void		c3d_player_starting_positon(t_param *cub3d);
@@ -252,9 +254,9 @@ void		c3d_player_validation(t_param *cub3d, int i);
 void		c3d_player_rotation(t_param *cub3d, int direction);
 void		c3d_player_normalize_angle(t_param *cub3d);
 void		c3d_player_normalize_next_angle(t_param *cub3d);
-void		c3d_player_next_postion(t_param *cub3d, int direction);
-void		c3d_player_next_postion_wall_check(t_param *cub3d);
-void		c3d_player_postion_sprite_check(t_param *cub3d);
+void		c3d_player_next_position(t_param *cub3d, int direction);
+void		c3d_player_next_position_wall_check(t_param *cub3d);
+void		c3d_player_position_sprite_check(t_param *cub3d);
 int			c3d_player_wall_collusion(t_param *cub3d, int x, int y);
 int			c3d_player_sprite_collusion(t_param *cub3d, int x, int y);
 

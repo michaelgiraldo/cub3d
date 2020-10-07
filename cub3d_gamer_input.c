@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/04 16:47:07 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 00:22:38 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 16:10:38 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ int	c3d_key_press(int keycode, t_param *cub3d)
 {
 	cub3d->window.render = 0;
 	if (keycode == KEY_W)
-		c3d_player_next_postion(cub3d, FORWARD);
+		c3d_player_next_position(cub3d, FORWARD);
 	else if (keycode == KEY_S)
-		c3d_player_next_postion(cub3d, BACKWARD);
+		c3d_player_next_position(cub3d, BACKWARD);
 	else if (keycode == KEY_A)
-		c3d_player_next_postion(cub3d, LEFT);
+		c3d_player_next_position(cub3d, LEFT);
 	else if (keycode == KEY_D)
-		c3d_player_next_postion(cub3d, RIGHT);
+		c3d_player_next_position(cub3d, RIGHT);
 	else if (keycode == KEY_LEFT)
 		c3d_player_rotation(cub3d, COUNTERCLOCKWISE);
 	else if (keycode == KEY_RIGHT)

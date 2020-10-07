@@ -6,11 +6,18 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 02:47:22 by mg                #+#    #+#             */
-/*   Updated: 2020/10/04 16:55:01 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 18:43:38 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+int		c3d_window_refresh(t_param *cub3d)
+{
+	if (cub3d->render.img_ptr)
+		c3d_window_render(cub3d);
+	return (1);
+}
 
 void	c3d_window_render(t_param *cub3d)
 {

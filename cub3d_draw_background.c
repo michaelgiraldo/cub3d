@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/05 14:16:54 by mg                #+#    #+#             */
-/*   Updated: 2020/09/30 23:26:31 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 16:10:38 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	c3d_draw_background(t_param *cub3d)
 		x = 0;
 		while (x < cub3d->window.width)
 		{
-			position = c3d_pixel_postion(x, y,
+			position = c3d_pixel_position(x, y,
 				cub3d->render.bits_per_pixel, cub3d->render.size_line);
 			if (y < cub3d->window.height / 2)
 				*(unsigned int*)(cub3d->render.img_data + position) =

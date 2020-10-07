@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 23:47:30 by mg                #+#    #+#             */
-/*   Updated: 2020/10/01 22:28:36 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/06 20:18:26 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		c3d_bitmap_write_header(int fd, t_param *cub3d)
 
 	y = 0;
 	filesize = c3d_bitmap_size(cub3d->window.width, cub3d->window.height);
-	ft_printf("Bitmap File Size: %u", filesize);
+	ft_printf("Bitmap File Size: %u\n", filesize);
 	while (y < 54)
 		bmpfileheader[y++] = (unsigned char)(0);
 	bmpfileheader[0] = (unsigned char)('B');
