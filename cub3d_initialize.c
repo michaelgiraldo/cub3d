@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 16:33:17 by mg                #+#    #+#             */
-/*   Updated: 2020/10/07 11:55:03 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 21:07:13 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	c3d_initialize_map(t_param *cub3d)
 	c3d_parse_map_grid(cub3d);
 	c3d_player_starting_positon(cub3d);
 	c3d_map_validation(cub3d);
-	cub3d->map.step = cub3d->map.tile_size / 2;
+	cub3d->map.step = cub3d->map.tile_size / 4;
 	cub3d->map.width = cub3d->map.tile_size * cub3d->map.column;
 	cub3d->map.height = cub3d->map.tile_size * cub3d->map.row;
 }
