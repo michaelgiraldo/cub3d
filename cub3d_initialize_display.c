@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 17:42:38 by mg                #+#    #+#             */
-/*   Updated: 2020/10/07 14:58:32 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 22:32:48 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	c3d_initialize_display_mlx(t_param *cub3d)
 {
 	cub3d->mlx = mlx_init();
 	if (!cub3d->mlx)
-		c3d_print_error(cub3d, "DISPLAY MLX");
+		c3d_print_error_sys(cub3d, "DISPLAY MLX");
 }
 
 void	c3d_initialize_display_window(t_param *cub3d)
@@ -39,7 +39,7 @@ void	c3d_initialize_display_window(t_param *cub3d)
 	cub3d->win = mlx_new_window(cub3d->mlx,
 	cub3d->window.width, cub3d->window.height, "Michael Giraldo - Cub3d");
 	if (!cub3d->win)
-		c3d_print_error(cub3d, "DISPLAY WINDOW");
+		c3d_print_error_sys(cub3d, "DISPLAY WINDOW");
 }
 
 void	c3d_initialize_render_image(t_param *cub3d)

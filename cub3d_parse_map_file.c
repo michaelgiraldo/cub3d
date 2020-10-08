@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 13:36:59 by mg                #+#    #+#             */
-/*   Updated: 2020/10/03 21:17:11 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 22:33:52 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		c3d_parse_map_file(t_param *cub3d)
 	char *line;
 
 	if ((cub3d->map.fd = open(cub3d->map.file, O_RDONLY)) == -1)
-		c3d_print_error(cub3d, cub3d->map.file);
+		c3d_print_error_sys(cub3d, cub3d->map.file);
 	while (get_next_line(cub3d->map.fd, &line) > 0)
 	{
 		if (c3d_map_file_is_resolution(line))

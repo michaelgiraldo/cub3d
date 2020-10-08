@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/31 20:15:13 by mg                #+#    #+#             */
-/*   Updated: 2020/10/07 15:02:23 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 23:19:35 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main(int argc, char **argv)
 		c3d_print_error(&cub3d, "GAME FILE NOT CUB EXTENSION");
 	if (argc == 3 && c3d_is_save(argv[2]))
 		cub3d.bitmap = 1;
+	if (argc == 3 && cub3d.bitmap == 0)
+		c3d_print_error(&cub3d, "INVALID THIRD ARUGMENT");
 	c3d_initiate_game(&cub3d);
 	c3d_raycasting(&cub3d);
 	c3d_valid_keys();

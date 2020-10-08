@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 16:33:17 by mg                #+#    #+#             */
-/*   Updated: 2020/10/07 21:07:13 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 22:33:18 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ void	c3d_initialize_sprite(t_param *cub3d)
 	c3d_sprite_grid_coordinate(cub3d);
 	cub3d->wall.height_at = ft_memalloc(cub3d->window.width * sizeof(int));
 	if (!cub3d->wall.height_at)
-		c3d_print_error(cub3d, "SPRITE HEIGHT AT ARRAY");
+		c3d_print_error_sys(cub3d, "SPRITE HEIGHT AT ARRAY");
 }

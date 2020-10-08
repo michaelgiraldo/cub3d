@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 12:52:14 by mg                #+#    #+#             */
-/*   Updated: 2020/10/06 13:01:16 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 23:08:38 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	c3d_player_rotation(t_param *cub3d, int direction)
 {
-	cub3d->player.angle += (M_PI / 8) * direction;
+	cub3d->player.angle += (double)M_PI / 36.0 * (double)direction;
 	cub3d->window.render = 1;
 	c3d_player_normalize_angle(cub3d);
 }

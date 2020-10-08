@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 19:55:21 by mg                #+#    #+#             */
-/*   Updated: 2020/10/07 13:44:36 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 23:01:41 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,6 +197,7 @@ void		c3d_draw_sprite_pixel(t_param *cub3d, int k, int x, int y);
 */
 
 void		c3d_print_error(t_param *cub3d, char *msg);
+void		c3d_print_error_sys(t_param *cub3d, char *msg);
 
 /*
 **	Free Memory
