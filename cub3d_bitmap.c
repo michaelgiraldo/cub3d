@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 15:58:47 by mg                #+#    #+#             */
-/*   Updated: 2020/10/07 22:31:53 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 23:40:09 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	c3d_bitmap_save(t_param *cub3d)
 	int error;
 
 	error = 0;
-	fd = open("cub3d.bmp", O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 2525);
+	fd = open("cub3D.bmp", O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 2525);
 	if (fd < 0)
 		error = 1;
 	if (!error && !c3d_bitmap_write_header(fd, &cub3d->render))
@@ -32,7 +32,7 @@ void	c3d_bitmap_save(t_param *cub3d)
 		c3d_print_error(cub3d, "ISSUE SAVING BITMAP - WRITING HEADER");
 	else if (error == 3)
 		c3d_print_error(cub3d, "ISSUE SAVING BITMAP - WRITING DATA");
-	ft_printf("BITMAP SAVED TO ####### cub3d.bmp #######\n");
+	ft_printf("BITMAP SAVED TO ####### cub3D.bmp #######\n");
 	c3d_free_memory(cub3d);
 }
 
