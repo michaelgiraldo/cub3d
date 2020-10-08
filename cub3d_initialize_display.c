@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/03 17:42:38 by mg                #+#    #+#             */
-/*   Updated: 2020/10/07 23:39:49 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/07 23:42:24 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	c3d_initialize_display_mlx(t_param *cub3d)
 	if (!cub3d->mlx)
 		c3d_print_error_sys(cub3d, "DISPLAY MLX");
 	mlx_do_key_autorepeaton(cub3d->mlx);
+}
 
 void	c3d_initialize_display_window(t_param *cub3d)
 {
