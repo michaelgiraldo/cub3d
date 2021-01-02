@@ -4,7 +4,7 @@ SO ./texture/wall/wall_korean_s.xpm
 WE ./texture/wall/wall_korean_w.xpm
 EA ./texture/wall/wall_korean_e.xpm
 
-S ./texture/fun/cake.xpm
+S ./texture/wall/wall_korean_s.xpm
 
 F 112,112,112
 C 56,56,56

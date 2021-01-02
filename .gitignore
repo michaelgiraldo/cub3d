@@ -1,6 +1,7 @@
 # User defined files
 sandbox
-Cub3D
+cub3D
+cub3D.bmp
 
 # Prerequisites
 *.d

@@ -6,7 +6,7 @@
 #    By: mg <mg@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/26 14:40:16 by mgiraldo          #+#    #+#              #
-#    Updated: 2020/10/07 21:58:29 by mg               ###   ########.fr        #
+#    Updated: 2020/10/20 11:26:22 by mg               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,10 @@ GNL=-L gnl -lgnl
 LIBFT=-L libft -lft
 
 #mlx libary link
-MLX=-I minilibx -L minilibx-linux -lmlx 
+MLX=-I minilibx-linux -L minilibx-linux -lmlx 
 
 #Additional System libaries
-SYS=-lXext -lX11 -lbsd -lm
+SYS=-lXext -lX11 -lm
 
 all:$(GAME)
 

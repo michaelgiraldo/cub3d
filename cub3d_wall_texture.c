@@ -38,6 +38,10 @@ void	c3d_wall_texture(t_param *cub3d, int y)
 	}
 }
 
+/*
+** West and South x axis is inversed
+*/
+
 void	c3d_wall_texture_color(t_param *cub3d, t_image *img, int x, int y)
 {
 	double texture_ratio_y;
@@ -53,5 +57,7 @@ void	c3d_wall_texture_color(t_param *cub3d, t_image *img, int x, int y)
 	}
 	texture_ratio_y = (double)img->height / (double)cub3d->wall.height;
 	y *= texture_ratio_y;
+	if (cub3d->wall.facing == 'W' || cub3d->wall.facing == 'S')
+		x = img->width - 1 - x;
 	cub3d->wall.color = c3d_pixel_get_color(img, x, y);
 }

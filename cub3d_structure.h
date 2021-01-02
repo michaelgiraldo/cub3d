@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 23:51:40 by mg                #+#    #+#             */
-/*   Updated: 2020/10/07 11:40:22 by mg               ###   ########.fr       */
+/*   Updated: 2020/10/20 12:13:08 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,7 @@ typedef struct		s_wall {
 	int				type;
 	int				height;
 	uint32_t		color;
-	double			angle;
 	double			distance;
-	double			distance_plane;
 	char			facing;
 	int				*height_at;
 }					t_wall;
